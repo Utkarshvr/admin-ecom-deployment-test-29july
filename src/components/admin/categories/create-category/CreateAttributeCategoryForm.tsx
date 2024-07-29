@@ -5,11 +5,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/components/ui/use-toast";
 import axiosInstance from "@/lib/axiosInstance";
 import { AttributeType } from "@/types/admin/types";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type Props = {};
 
 export default function CreateAttributeCategoryForm({}: Props) {
+  const { id } = useParams();
+
   const [allAttributes, setAllAttributes] = useState<AttributeType[]>([]);
 
   const [checkedAttributes, setCheckedAttributes] = useState<string[]>([]);
